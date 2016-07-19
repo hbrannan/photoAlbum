@@ -15,7 +15,7 @@ app.get('/', function (req, res){
 // ensure that the express server is listening
 app.listen(port, function () {
 	console.log('example app listening on port' + port);
-})
+});
 
 
 
