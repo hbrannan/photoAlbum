@@ -1,13 +1,14 @@
-const Display = ({fish}) => (
+const Display = (props) => (
+
 	<div>
-		<h3>{fish.name}</h3>
+		<h3>{props.currentFish.name}</h3>
 		<div>
 		  <span>
-		  <img src={fish.image}/>
+		  <img src={props.currentFish.image}/>
 		  </span>
-		  <span>{fish.description}</span>
+		  <span>{props.currentFish.description}</span>
 		</div>
 	</div> 
-);
+); 
 
 window.Display = Display;

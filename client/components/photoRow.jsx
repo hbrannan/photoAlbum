@@ -3,9 +3,8 @@ const PhotoRow = (props) => {
     	<tr>
     		<td className="photo">
     		    <div>
-                    {/*CLICK HERE (on title) wrap in anon. func so not immed. executed!*/}
-                  <span onClick={()=>props.handleNameClick({props})}>
-                    <img src={this.props.name}/>
+                  <span onClick={()=>{props.handleNameClick(props.fish)} }>
+                    <h3>{props.fish.name}</h3>
                   </span>
     		    </div>
     		</td>
@@ -14,4 +13,3 @@ const PhotoRow = (props) => {
 };
 
 window.PhotoRow = PhotoRow;
-        			// 

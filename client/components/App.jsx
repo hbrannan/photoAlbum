@@ -1,27 +1,30 @@
 class App extends React.Component {
 	constructor (props) {
 		super(props);
-		// this.state = {
-		// 	currentFish: this.props.data[0];
-		// }
+		this.state = {
+			currentFish: this.props.data[0]
+		}
 	}
 
 	onNameClick (fish) {
-		//make sure to pass this down
-		// update state here: to show details/ title
-		//*current fish*
+		this.setState({currentFish: fish});
 		///to update in display
+		//make sure to pass this down
+		// console.log(fish))
 	}
 
 	render () {
 		return (
-			<div>
-			    {/*BIND THIS HERE so lookup will run all the way back to App correctly*/}
-				{this.props.data.map(fish => <PhotoRow fish={fish} handleNameClick={this.onNameClick.bind(this)} />)}
+			<div> 
+			  <table>
+			    <tbody>
+				{this.props.data.map((fish, key) => <PhotoRow key={key} fish={fish} handleNameClick={this.onNameClick.bind(this)} />)}
+			    </tbody>
+			  </table>
+			  <Display currentFish={this.state.currentFish}/>
 			</div>
 		);
 	};
-
 }
 
 

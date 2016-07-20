@@ -1,5 +1,5 @@
 var express = require ('express');
-var port = 3000;
+var port = 8000;
 var app = express();
 //init the server
 
