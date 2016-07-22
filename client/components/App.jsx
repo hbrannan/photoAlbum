@@ -2,15 +2,21 @@ class App extends React.Component {
 	constructor (props) {
 		super(props);
 		this.state = {
-			currentFish: this.props.data[0]
+			currentFish: this.props.data[0],
+			rating: this.props.data[0].rating
 		}
 	}
 
 	onNameClick (fish) {
 		this.setState({currentFish: fish});
-		///to update in display
-		//make sure to pass this down
-		// console.log(fish))
+	}
+
+	onRatingChange (rating) {
+		console.log('rating is')
+		console.log(rating); 
+		// var num = this.state.rating;
+		// num +=1;
+		// this.setState({rating: num});
 	}
 
 	render () {
@@ -21,7 +27,7 @@ class App extends React.Component {
 				{this.props.data.map((fish, key) => <PhotoRow key={key} fish={fish} handleNameClick={this.onNameClick.bind(this)} />)}
 			    </tbody>
 			  </table>
-			  <Display currentFish={this.state.currentFish}/>
+			  <Display currentFish={this.state.currentFish} handleRatingChange={this.onRatingChange.bind(this)}/>
 			</div>
 		);
 	};

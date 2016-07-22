@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel client --out-dir client/compiled --presets es2015,react --ignore node_modules,compiled,index.html --source-maps inline --watch"
+    "build": "babel client --out-dir client/compiled --presets es2015,react --ignore node_modules,compiled,index.html --source-maps inline --watch",
+    "start": "nodemon server/server.js"
   },
   "devDependencies": {
     "babel-cli": "^6.0.0"

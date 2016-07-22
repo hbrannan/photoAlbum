@@ -8,6 +8,11 @@ const Display = (props) => (
 		  </span>
 		  <span>{props.currentFish.description}</span>
 		</div>
+		<div>
+		  <span onClick={ ()=> {props.handleRatingChange(props.currentFish.rating)} }>
+		    <h4>{props.currentFish.rating}</h4>
+		  </span>
+		</div>
 	</div> 
 ); 
 
