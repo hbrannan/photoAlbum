@@ -1,26 +1,26 @@
 var fishData = [
   {
-    name: 'Goldfish',
-    image: 'http://tinyurl.com/n4vgcl5',
-    description: 'Everyone\'s first pet',
+    name: 'Rabi\'a al-Basri',
+    image: 'http://www.deeptrancenow.com/images/sufi-love.jpg',
+    description: 'Burned heaven and doused hell',
     rating: 0
   },
   {
-    name: 'Pufferfish',
-    image: 'http://tinyurl.com/kxd7cuu',
-    description: 'So puffy!',
+    name: 'Theresa of Avila',
+    image: 'http://www.artble.com/imgs/d/a/5/431705/the_ecstasy_of_saint_theresa.jpg',
+    description: 'Extacy of Caramel',
     rating: 0
 
   }, 
   {
-    name: 'Tuna',
-    image: 'http://tinyurl.com/zgs7z2s',
-    description: 'Why are these things so huge? They\'re terrifying.',
+    name: 'Yeshe Tsogyal',
+    image: 'http://static1.squarespace.com/static/5654037de4b0a689b3fbb9fd/t/5660f6d0e4b0c8e9dc5c51ab/1449195224222/Yeshe-Tsogyal-1-Samye_lzn_w.jpg?format=750w',
+    description: 'Victorious ocean of wisdom.',
     rating: 0
 
   }
 ];
-  
+  //Julian of Norwich
 //think of this as kind of like a view and you are now calling the instance of App
 ReactDOM.render(
 	<App data={fishData}/>,

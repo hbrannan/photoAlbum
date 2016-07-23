@@ -10,9 +10,10 @@ const Display = (props) => (
 		</div>
 		<div>
 		  <span>
+		{/*why is this one not wrapped&the other iz*/}
 		    <form onChange={props.handleRatingChange}>
-		    	<select id="rating" defaultValue="5">
-		    	  <option value="1" >1</option>
+		    	<select id="rating">
+		    	  <option value="1">1</option>
 		    	  <option value="2">2</option>
 		    	  <option value="3">3</option>
 		    	  <option value="4">4</option>

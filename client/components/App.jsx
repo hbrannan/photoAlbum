@@ -2,6 +2,7 @@ class App extends React.Component {
 	constructor (props) {
 		super(props);
 		this.state = {
+			formPlaceholder: 'Submit your content!',
 			currentFish: this.props.data[0],
 			rating: this.props.data[0].rating
 		}
@@ -12,9 +13,19 @@ class App extends React.Component {
 	}
 
 	onRatingChange (rating) {
-		console.log(rating);
-		// var newRating = rating.value; 
 		this.setState({rating: rating.target.value});
+	}
+	clearPlaceholder (e){
+		console.log(e);
+		e.preventDefault();
+		this.setState({formPlaceholder: ''});
+	}
+	submitForm (e){
+				console.log(e);
+
+		e.preventDefault();
+		this.setState({formPlaceholder: 'Submit your content!'});
+
 	}
 
 	render () {
@@ -26,6 +37,9 @@ class App extends React.Component {
 			    </tbody>
 			  </table>
 			  <Display currentFish={this.state.currentFish} currentRating={this.state.rating} handleRatingChange={this.onRatingChange.bind(this)}/>
+			  <form>
+			  	<input type="text" placeholder={this.state.formPlaceholder} onInput={()=>this.clearPlaceholder} onSubmit={()=>this.submitForm}/>
+			  </form>
 			</div>
 		);
 	};
