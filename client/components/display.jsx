@@ -9,8 +9,17 @@ const Display = (props) => (
 		  <span>{props.currentFish.description}</span>
 		</div>
 		<div>
-		  <span onClick={ ()=> {props.handleRatingChange(props.currentFish.rating)} }>
-		    <h4>{props.currentFish.rating}</h4>
+		  <span>
+		    <form onChange={props.handleRatingChange}>
+		    	<select id="rating" defaultValue="5">
+		    	  <option value="1" >1</option>
+		    	  <option value="2">2</option>
+		    	  <option value="3">3</option>
+		    	  <option value="4">4</option>
+		    	  <option value="5">5</option>
+		    	</select>
+		    </form>
+		    <h4>Rated {props.currentRating} out of 5</h4>
 		  </span>
 		</div>
 	</div> 

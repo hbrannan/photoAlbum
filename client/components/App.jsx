@@ -12,11 +12,9 @@ class App extends React.Component {
 	}
 
 	onRatingChange (rating) {
-		console.log('rating is')
-		console.log(rating); 
-		// var num = this.state.rating;
-		// num +=1;
-		// this.setState({rating: num});
+		console.log(rating);
+		// var newRating = rating.value; 
+		this.setState({rating: rating.target.value});
 	}
 
 	render () {
@@ -27,7 +25,7 @@ class App extends React.Component {
 				{this.props.data.map((fish, key) => <PhotoRow key={key} fish={fish} handleNameClick={this.onNameClick.bind(this)} />)}
 			    </tbody>
 			  </table>
-			  <Display currentFish={this.state.currentFish} handleRatingChange={this.onRatingChange.bind(this)}/>
+			  <Display currentFish={this.state.currentFish} currentRating={this.state.rating} handleRatingChange={this.onRatingChange.bind(this)}/>
 			</div>
 		);
 	};
