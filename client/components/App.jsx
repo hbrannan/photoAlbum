@@ -4,7 +4,8 @@ class App extends React.Component {
 		this.state = {
 			formPlaceholder: 'Submit your content!',
 			currentFish: this.props.data[0],
-			rating: this.props.data[0].rating
+			rating: this.props.data[0].rating,
+
 		}
 	}
 
@@ -15,17 +16,22 @@ class App extends React.Component {
 	onRatingChange (rating) {
 		this.setState({rating: rating.target.value});
 	}
-	clearPlaceholder (e){
-		console.log(e);
-		e.preventDefault();
-		this.setState({formPlaceholder: ''});
-	}
-	submitForm (e){
-				console.log(e);
-
-		e.preventDefault();
-		this.setState({formPlaceholder: 'Submit your content!'});
-
+	submitForm (event){
+		//get the fromVal from the event e.target.value;
+		var formVal = event.target[0].value;
+		event.preventDefault(); // doesn't appear functional
+		$.ajax({
+			type: 'POST',
+			url: '/photos',
+			data: formVal,
+			success: function (postedPhoto){
+				//update your state: keep the photos in the state.
+				console.log('made post', postedPhoto); 
+			},
+			error: function(err) {
+				console.log('error saving form' + err);
+			}
+		  });
 	}
 
 	render () {
@@ -37,8 +43,8 @@ class App extends React.Component {
 			    </tbody>
 			  </table>
 			  <Display currentFish={this.state.currentFish} currentRating={this.state.rating} handleRatingChange={this.onRatingChange.bind(this)}/>
-			  <form>
-			  	<input type="text" placeholder={this.state.formPlaceholder} onInput={()=>this.clearPlaceholder} onSubmit={()=>this.submitForm}/>
+			  <form onSubmit={this.submitForm}>
+			  	<input type="text" placeholder={this.state.formPlaceholder}/>
 			  </form>
 			</div>
 		);
@@ -47,9 +53,3 @@ class App extends React.Component {
 
 
 window.App = App;
-				//here instantiate subViews
-				//set their props and pass down function/events/listeners via props
-
-
-
-				//{this.props.data.map(photo => <PhotoRow photo={photo} handlePhotoClick={this.handlePhotoClick.bind(this)}/>)}
