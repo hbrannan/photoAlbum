@@ -24,10 +24,14 @@ app.get('/photos', function (req, res){
 //insert a photo into the db
 app.post('/photos', function (req, res){
 	//insert into db
+	console.log('reached post!', req.body);
+	utils.addPhoto(req, res.send);
 	//by calling a utility function! 	
-	res.send(req.body);
+	// res.send(req.body);
 });
 // ensure that the express server is listening
 app.listen(port, function () {
 	console.log('example app listening on port ' + port);
 });
+
+module.exports.port = port;
